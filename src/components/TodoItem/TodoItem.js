@@ -5,6 +5,9 @@ import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
 export default class TodoItem extends Component {
+  shouldComponentUpdate(nextProps,nextState){
+    return this.props.done !== nextProps.done;
+  }
   render() {
       /*
       done : 해당 일정을 완료했는지 완료하지 않았는지 여부
